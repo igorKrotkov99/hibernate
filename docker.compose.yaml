@@ -1,0 +1,28 @@
+services:
+  postgres:
+    container_name: hiber
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: hiber
+      POSTGRES_USER: hiber
+      POSTGRES_PASSWORD: hiber
+    ports:
+      - "5434:5432"
+    networks:
+      - postgresql
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - redis-data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+networks:
+  postgresql:
+    driver: bridge
+volumes:
+  redis-data:

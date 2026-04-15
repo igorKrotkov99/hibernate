@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: hiberService
+  datasource:
+    url: jdbc:postgresql://localhost:5434/hiber
+    username: hiber
+    password: hiber
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database: PostgreSQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: password
+
+
+
