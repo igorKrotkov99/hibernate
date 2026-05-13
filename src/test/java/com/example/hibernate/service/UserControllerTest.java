@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(UserController.class)
@@ -48,7 +47,7 @@ public class UserControllerTest {
     }
     @Test
     public void create_ShouldCreateUser() throws Exception {
-        when(userService.createUser(any(Person.class))).thenReturn(person);
+        when(userService.createUser(any(com.example.hibernate.dto.PersonDto.class))).thenReturn(person);
         mockMvc.perform(MockMvcRequestBuilders.post("/api/users/create")
                         .contentType(org.springframework.http.MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(person)))

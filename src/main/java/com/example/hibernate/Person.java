@@ -10,6 +10,10 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String firstName;
+  
+    private String lastName;
+  
     public String getUsername() {
         return username;
     }
