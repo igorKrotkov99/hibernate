@@ -1,6 +1,8 @@
 package com.example.hibernate.service;
 
 import com.example.hibernate.*;
+import com.example.hibernate.redis.UserRepositoryRedis;
+import net.minidev.json.JSONUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,8 +21,13 @@ import static org.mockito.Mockito.*;
 public class UserServiceTest {
     @Mock
     private UserRepository userRepository;
+
     @Mock
     private DepartmentRepository departmentRepository;
+
+    @Mock
+    UserRepositoryRedis userRepositoryRedis;
+
     @InjectMocks
     private UserService userService;
 
@@ -35,6 +42,7 @@ public class UserServiceTest {
         List<Person> persons = new ArrayList<Person>();
         department.addUser(person);
         persons.add(person);
+        System.out.println("1");
     }
     @Test
     public void myFirstTest(){
