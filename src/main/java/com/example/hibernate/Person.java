@@ -13,6 +13,10 @@ public class Person implements Serializable {
     private String firstName;
   
     private String lastName;
+
+    private String email;
+
+
   
     public String getUsername() {
         return username;
