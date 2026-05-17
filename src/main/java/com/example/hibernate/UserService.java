@@ -8,9 +8,9 @@ import java.util.List;
 
 @Service
 public class UserService {
-    private UserRepositoryRedis userRedisRepository;
-    private  UserRepository userRepository;
-    private DepartmentRepository departmentRepository;
+    private final UserRepositoryRedis userRedisRepository;
+    private final UserRepository userRepository;
+    private final DepartmentRepository departmentRepository;
 
     public UserService(UserRepository userRepository, DepartmentRepository departmentRepository,  UserRepositoryRedis userRedisRepository) {
         this.userRedisRepository = userRedisRepository;

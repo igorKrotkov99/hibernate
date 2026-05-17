@@ -1,11 +1,12 @@
 package com.example.hibernate;
 
 import com.example.hibernate.dto.PersonDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Slf4j
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -31,11 +32,14 @@ public class UserController {
 
     @GetMapping("/findById/{id}")
     public Person findById(@PathVariable Long id) throws InterruptedException {
+        log.info("finding user by id {} ", id);
         return userService.findById(id);
     }
 
     @PostMapping("/create")
     public ResponseEntity<PersonDto> create(@RequestBody PersonDto person){
+        log.info("Creating user {}", person);
+        log.warn("Debug {}", person);
          userService.createUser(person);
          return ResponseEntity.ok().build();
     }

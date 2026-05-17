@@ -9,9 +9,11 @@ import java.time.Duration;
 @Repository
 public class UserRepositoryRedis {
     private final RedisTemplate<String, Object> redisTemplate;
+    private final TestService testService;
 
-    public UserRepositoryRedis(RedisTemplate redisTemplate) {
+    public UserRepositoryRedis(RedisTemplate redisTemplate, TestService testService) {
         this.redisTemplate = redisTemplate;
+        this.testService = testService;
     }
     public void cacheUser(Person person) {
         String key = "user:"  + person.getId();
@@ -25,4 +27,5 @@ public class UserRepositoryRedis {
         String key = "user:"  + userId;
         redisTemplate.delete(key);
     }
+
 }
