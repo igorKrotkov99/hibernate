@@ -32,4 +32,4 @@ jobs:
           mvn -verison
 
       - name: Run tests
-        run: mvn -B test
+        run: mvn test -e -X 2>&1 | grep -A 20 "Caused by:"
