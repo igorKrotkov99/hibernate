@@ -6,9 +6,11 @@ on:
       - main
       - master
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
+    name: Run maven tests
     runs-on: ubuntu-latest
 
     permissions:
@@ -24,6 +26,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - name: Check Java and Maven versions
+        run: | 
+          java -version 
+          mvn -verison
 
       - name: Run tests
         run: mvn -B test
