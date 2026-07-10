@@ -11,11 +11,9 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
-    private final UserRepository users;
     private final DepartmentRepository departments;
 
-    public UserController(UserRepository users, DepartmentRepository departments, UserService userService) {
-        this.users = users;
+    public UserController( DepartmentRepository departments, UserService userService) {
         this.departments = departments;
         this.userService = userService;
     }
