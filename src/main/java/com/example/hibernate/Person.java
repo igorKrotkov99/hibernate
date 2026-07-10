@@ -15,6 +15,7 @@ public class Person implements Serializable {
     private String lastName;
 
     private String email;
+    private String city;
 
 
   
