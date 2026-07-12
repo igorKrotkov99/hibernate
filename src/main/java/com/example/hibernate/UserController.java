@@ -1,15 +1,19 @@
 package com.example.hibernate;
 
 import com.example.hibernate.dto.PersonDto;
+import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@Slf4j
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+    private Logger log = LogManager.getLogger(UserController.class);
     private final UserService userService;
     private final DepartmentRepository departments;
 
