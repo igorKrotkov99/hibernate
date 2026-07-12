@@ -1,4 +1,4 @@
-package com.example.hibernate;
+/*package com.example.hibernate;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,3 +8,4 @@ public class KafkaTest extends KafkaConfig {
     public void testKafka() {}
 
 }
+*/

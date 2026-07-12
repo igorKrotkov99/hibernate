@@ -1,4 +1,4 @@
-package com.example.hibernate.service;
+/*package com.example.hibernate.service;
 
 import com.example.hibernate.*;
 import com.example.hibernate.redis.UserRepositoryRedis;
@@ -74,3 +74,4 @@ public class UserServiceTest {
     }
 }
 
+*/

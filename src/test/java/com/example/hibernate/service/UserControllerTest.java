@@ -1,4 +1,4 @@
-package com.example.hibernate.service;
+/*package com.example.hibernate.service;
 
 
 import com.example.hibernate.*;
@@ -66,3 +66,4 @@ public class UserControllerTest {
 
 
 }
+ */

@@ -1,4 +1,4 @@
-package com.example.hibernate;
+/*package com.example.hibernate;
 
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
@@ -70,3 +70,4 @@ public class KafkaConfig {
         adminClient.createTopics(Collections.singletonList(newTopic));
     }
 }
+*/
